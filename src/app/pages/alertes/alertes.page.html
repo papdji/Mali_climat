@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar lines="none">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+
+      <ion-title>Alertes</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content class="ion-no-margin ion-no-padding">
+      <ion-list>
+        <ion-card>
+          <swiper [autoplay]="true" [keyboard]="true" [scrollbar]="true" [zoom]="true">
+            <ng-template swiperSlide><img
+                src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2FiPhone%C2%A013%2C%2012%20Pro%20Max%20%E2%80%93%201.png?alt=media&token=62929e6b-6695-4fb9-a918-831ad4348231"
+                alt="">
+            </ng-template>
+            <ng-template swiperSlide><img
+                src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2FiPhone%C2%A013%2C%2012%20Pro%20Max%20%E2%80%93%201.png?alt=media&token=62929e6b-6695-4fb9-a918-831ad4348231"
+                alt=""></ng-template>
+            <ng-template swiperSlide><img
+                src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2FiPhone%C2%A013%2C%2012%20Pro%20Max%20%E2%80%93%201.png?alt=media&token=62929e6b-6695-4fb9-a918-831ad4348231"
+                alt=""></ng-template>
+            <ng-template swiperSlide><img
+                src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2Fimages.jfif?alt=media&token=3de10b0f-7ad6-4d2a-9807-ecd7598e5bb5"
+                alt=""></ng-template>
+            <ng-template swiperSlide style="display: flex; flex-direction: row;"><img
+                src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2Ft%C3%A9l%C3%A9chargement.jfif?alt=media&token=29b2192f-ee7d-40d5-873f-27511b17cfcb"
+                alt="">
+
+            </ng-template>
+
+          </swiper>
+        </ion-card>
+        <ion-item>
+          <audio class="player" controls>
+            <source
+              src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2F%C3%80%20ton%20appel%20Mali%20%E2%80%93%20Hymne%20du%20Mali%20(64%20kbps).mp3?alt=media&token=a97aa179-1c64-4277-a266-12f336d6a662">
+          </audio>
+        </ion-item>
+
+        <ion-item class="ion-margin">
+          <ion-text class="text-justify" style="font-size: 30
+          px;">Vous étes temoin d'une alerte signaler ici.</ion-text>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add" routerLink="/alertform"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

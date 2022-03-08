@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar lines="none">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="tabs"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-padding">
+    <ion-card-content>
+      <img class="profile-img" src="{{ currentUser?.photoURL }}" />
+
+      <form #data="ngForm" (ngSubmit)="updateUser(data)">
+        <ion-item class="ion-margin-top ion-margin-bottom bg_transp" lines="none">
+          <ion-label position="floating">Vous étes connecté en tant</ion-label>
+          <ion-input name="displayName" value="{{ currentUser?.displayName }}" ngModel></ion-input>
+          <ion-input name="displayName" value="{{ currentUser?.email }}" ngModel></ion-input>
+        </ion-item>
+        <ion-button expand="block" (click)="takePicture()" color="primary">
+          <ion-icon name="create-outline"></ion-icon>
+          Modifier
+        </ion-button>
+        <ion-item class="ion-margin-top ion-margin-bottom bg_transp" lines="none">
+          <ion-label position="floating">Numéro de téléphone</ion-label>
+          <ion-input name="phoneNumber" value="{{ currentUser?.phoneNumber }}" placeholder="Ex: +223" ngModel></ion-input>
+        </ion-item>
+        <ion-button type="submit" expand="block" color="success">
+          <ion-icon class="ion-margin" name="save"></ion-icon>
+          <span>Mettre à jour</span>
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <ion-item>
+    <ion-icon color="danger" class="ion-margin" name="power" slot="start"></ion-icon>
+    <ion-label class="clabel" color="danger" expand="block" (click)="signOut()">Deconnecter</ion-label>
+  </ion-item>
+</ion-content>

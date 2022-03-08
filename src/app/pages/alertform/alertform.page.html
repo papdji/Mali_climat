@@ -1,0 +1,63 @@
+<ion-content>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/alertes"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center">Envoyer une alerte</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form #data="ngForm" (ngSubmit)="addAlerte(data)" method="post" enctype="multipart/form-data">
+    <ion-item class='ion-margin' lines="none">
+      <ion-label position="floating">Choississez la categorie</ion-label>
+      <ion-select>
+        <ion-select id="category" name="category" ngModel>
+          <ion-select-option value="inonndation">Inonndation</ion-select-option>
+          <ion-select-option value="incendie">Incendie</ion-select-option>
+          <ion-select-option value="secheresse">Sécheresse</ion-select-option>
+        </ion-select>
+      </ion-select>
+    </ion-item>
+    <ion-item class="ion-margin" *ngIf="categorySelected">
+      <ion-text><strong>Vous avez choisi la categorie : </strong><p>{{ categorySelected }}</p></ion-text>
+    </ion-item>
+
+    <ion-item class='ion-margin' lines="none">
+      <ion-label position="floating">Choississez la ville</ion-label>
+      <ion-select id="city" name="city" ngModel>
+        <ion-select-option value="bamako">Bamako</ion-select-option>
+        <ion-select-option value="kayes">Kayes</ion-select-option>
+        <ion-select-option value="koulikoro">Koulikoro</ion-select-option>
+        <ion-select-option value="sikasso">Sikaso</ion-select-option>
+        <ion-select-option value="segou">Ségou</ion-select-option>
+        <ion-select-option value="mopti">Mopti</ion-select-option>
+        <ion-select-option value="tombouctou">Tombouctou</ion-select-option>
+        <ion-select-option value="gao">Gao</ion-select-option>
+        <ion-select-option value="kidal">Kiadal</ion-select-option>
+        <ion-select-option value="niono">Niono</ion-select-option>
+        <ion-select-option value="koutiala">Koutiala</ion-select-option>
+        <ion-select-option value="san">San</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class='ion-margin' lines="none" *ngIf="illnessSelected">
+      <ion-text><strong>Vous avez choisi la ville : </strong><p>{{ illnessSelected }}</p></ion-text>
+    </ion-item>
+    <ion-item class='ion-margin' lines="none">
+      <ion-label position="floating">Description</ion-label>
+      <ion-input type="text" name="description" placeholder="description de l'alerte" ngModel></ion-input>
+    </ion-item>
+    <ion-item class='ion-margin' lines="none">
+      <ion-label position="stacked">Image</ion-label>
+      <ion-input type="file" name="image" placeholder="Image du lieu" ngModel></ion-input>
+    </ion-item>
+    <ion-item class='ion-margin' lines="none">
+      <ion-label position="stacked">Audio</ion-label>
+      <ion-input type="file" name="audio" placeholder="Vocal" ngModel></ion-input>
+    </ion-item>
+    <ion-button class="ion-margin" color="primary" expand="block" type="submit">Envoyer</ion-button>
+    <ion-button class="ion-margin" color="danger" expand="block" type="reset">Annuler</ion-button>
+  </form>
+
+</ion-content>

@@ -1,0 +1,154 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title *ngIf="data">{{ data.location.name }}</ion-title>
+        <ion-title *ngIf="!data">Météo actuelle</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-breadcrumbs>
+        <ion-breadcrumb href="/">
+            <ion-icon slot="start" name="home" style="color: black;"></ion-icon>
+            Accueil
+        </ion-breadcrumb>
+        <ion-breadcrumb href="/current">
+            <ion-icon slot="start" name="sunny"></ion-icon>
+            Météo actuelle
+        </ion-breadcrumb>
+    </ion-breadcrumbs>
+
+    <ion-header collapse="condense" *ngIf="data">
+        <ion-toolbar>
+            <ion-title size="medium">{{ data.location.country }} / {{ data.location.name }}</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-list *ngIf="error">
+        <ion-item>
+            <ion-text color="danger">
+                <h4>{{ error }}</h4>
+            </ion-text>
+        </ion-item>
+    </ion-list>
+
+    <form [formGroup]="weatherForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+            <ion-label for="cityName" position="floating">Nom de la viile</ion-label>
+            <ion-input type="text" id="cityName" name="cityName" formControlName="cityName" clearInput="true"></ion-input>
+        </ion-item>
+        <ion-button type="submit" expand="block" fill="outline">
+            <ion-icon slot="icon-only" slot="end" name="search"></ion-icon>
+            Recherche
+            <ion-ripple-effect></ion-ripple-effect>
+        </ion-button>
+    </form>
+
+    <div *ngIf="data" class="data">
+        <p style="text-align: center;">Dernière mis en jour: </p><p style="text-align: center;">{{ data.current.last_updated }}</p>
+        <ion-item>
+            <ion-label slot="start">Actuellement</ion-label>
+            <ion-note slot="end"> {{ data.current.condition.text }} {{ data.current.temp_c }} ℃ </ion-note>
+        </ion-item>
+        <ion-card class="card" style="height:100%">
+            <ion-item>
+                <ion-icon slot="start" name="thermometer"></ion-icon>
+                <ion-label class="ion-text-wrap" style="text-align: center;">
+                    <h2>Temp</h2>{{ data.current.feelslike_c }} ℃</ion-label>
+            </ion-item>
+            <ion-item><img src="../../assets/images/icons/vent.png">
+                <ion-label class="ion-text-wrap" style="text-align: center;">
+                    <h2>vent</h2>
+                    {{ data.current.vis_km }} km</ion-label>
+            </ion-item>
+            <ion-item>
+                <img src="../../assets/images/icons/vitesse.png">
+                <ion-label class="ion-text-wrap" style="text-align: center;">
+                    <h2>Vit-m-vent</h2> {{ data.current.wind_kph }} km/h {{ data.current.wind_dir }}</ion-label>
+            </ion-item>
+            <ion-item>
+              <img src="../../assets/images/icons/preci.png">
+                <ion-label class="ion-text-wrap" style="text-align: center;">
+                    <h2>préssion</h2> {{ data.current.pressure_mb }} hPa</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-icon slot="start" name="water"></ion-icon>
+                <ion-label class="ion-text-wrap" style="text-align: center;">
+                    <h2>hum</h2> {{ data.current.humidity }}%</ion-label>
+            </ion-item>
+        </ion-card>
+    </div>
+
+    <div *ngIf="!data && !error ">
+        <ion-list>
+            <ion-item>
+                <ion-thumbnail slot="start ">
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                </ion-thumbnail>
+                <ion-label>
+                    <h3>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </h3>
+                    <p>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </p>
+                    <p>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </p>
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-thumbnail slot="start ">
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                </ion-thumbnail>
+                <ion-label>
+                    <h3>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </h3>
+                    <p>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </p>
+                    <p>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </p>
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-thumbnail slot="start ">
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                </ion-thumbnail>
+                <ion-label>
+                    <h3>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </h3>
+                    <p>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </p>
+                    <p>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </p>
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-thumbnail slot="start ">
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                </ion-thumbnail>
+                <ion-label>
+                    <h3>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </h3>
+                    <p>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </p>
+                    <p>
+                        <ion-skeleton-text animated class="width60 "></ion-skeleton-text>
+                    </p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+
+</ion-content>

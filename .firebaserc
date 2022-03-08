@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "changement-climatique-3e1a1": {
+      "hosting": {
+        "app": [
+          "changement-climatique-3e1a1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "changement-climatique-3e1a1"
+  }
+}

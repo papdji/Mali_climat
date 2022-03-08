@@ -1,0 +1,60 @@
+ion-title {
+  text-align: center;
+}
+
+ion-content {
+  // --offset-bottom: auto !important;
+  // --overflow: hidden;
+  // overflow: auto;
+
+  // &::-webkit-scrollbar {
+  //   display: none;
+  // }
+
+  --background: linear-gradient(#065ef6, #819ef5, #f4f5f8, #f4f5f8);
+
+  ion-button {
+    color: #0015d1;
+
+  }
+
+  // overwrite inline styles
+
+}
+
+@media screen and (min-width:500px) {
+  .background-filter {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: #555;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+h1>i {
+  color: #222;
+}
+
+.weather-icons {
+  margin-top: 20px;
+}

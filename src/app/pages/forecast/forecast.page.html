@@ -1,0 +1,189 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title *ngIf="data">{{ data.location.name }}</ion-title>
+    <ion-title *ngIf="!data">Prévisions météorologiques</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-breadcrumbs>
+    <ion-breadcrumb href="/">
+      <ion-icon slot="start" name="home"></ion-icon>
+      Accueil
+    </ion-breadcrumb>
+    <ion-breadcrumb href="/forecast">
+      <ion-icon slot="start" name="stats-chart"></ion-icon>
+      Prévisions météorologiques
+    </ion-breadcrumb>
+  </ion-breadcrumbs>
+
+  <ion-header collapse="condense" *ngIf="data">
+    <ion-toolbar>
+      <ion-title size="large">{{ data.location.country }} / {{ data.location.name }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list *ngIf="error">
+    <ion-item>
+      <ion-text color="danger">
+        <h4>{{ error }}</h4>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+
+  <form [formGroup]="weatherForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label for="cityName" position="floating">Nom de la ville</ion-label>
+      <ion-input type="text" id="cityName" name="cityName" formControlName="cityName" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" fill="outline">
+      <ion-icon slot="icon-only" slot="end" name="search"></ion-icon>
+      Recherche
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-button>
+  </form>
+
+  <div *ngIf="data" class="data">
+
+    <div class="centerix" style="text-align: center;">
+      Dernière mis en jour: <p>{{ data.current.last_updated }}</p>
+    </div>
+
+    <div *ngFor="let day of data.forecast.forecastday">
+
+      <ion-card class="weather-card" style="display: flexbox;">
+
+        <div class="weather-header">
+          <div class="weather-header-condition">
+            <div class="weather-img" style="width: 60%;"><img [src]="data.current.condition.icon | safer: 'url'" style="width: 100px; padding-left: 3em; font-weight: 200;"></div>
+            {{ data.current.condition.text }}
+          </div>
+          <div class="weather-header2">
+            <div class="weather-header2-date" style="margin-left: 2em; font: 1.5em sans-serif;">{{ day.date | customDate }}</div>
+            <div class="weather-header2-degree" style="padding-top: 2em; font: 1.5em sans-serif; padding-block-end: 20px; margin-left: 1em;"> Actuellement il fait {{ day.day.avgtemp_c }} ℃</div>
+          </div>
+        </div>
+
+        <div class="weather-content" style="width: 100%;">
+          <div class="weather-details" style="width: 100%;">
+            <div class="weather-range">T-mini
+              <ion-icon name="thermometer"  style="padding-left: 3em; padding-top: 2em; padding-right: 2em; font: 1.5em sans-serif;"></ion-icon>{{ day.day.mintemp_c }} ℃ <p> T-max
+                <ion-icon name="thermometer"  style="padding-left: 3em; padding-top: 2em; padding-right: 3em; font: 1.5em sans-serif;"></ion-icon>{{ day.day.maxtemp_c }} ℃</p></div>
+            <div style="font-size: medium;">Vit-vent<img src="../../../assets/images/icons/vitesse.png" style="padding-left: 2em; padding-right: 2em; padding-top: 2em;">{{ day.day.maxwind_kph }} km/h</div>
+            <div style="font-size: medium;">Lever<img src=" ../../assets/images/icons/lever.png" style="padding-left: 2em; padding-right: 2em; padding-top: 2em;">{{ day.astro.sunrise }}</div>
+            <div style="font-size: medium;">coucher<img src="../../assets/images/icons/coucher.png" style="padding-left: 2em; padding-right: 2em; padding-top: 2em;">{{ day.astro.sunset }}</div>
+            <div style="font-size: medium;">Visibilité <ion-icon name="eye-outline" style="padding-left: 2em; padding-right: 2em; padding-top: 2em;"></ion-icon> {{ day.day.avgvis_km }} km</div>
+            <div style="font-size: medium;">Humid<img src="../../assets/images/icons/humid.png " style="padding-left: 2em; padding-right: 2em; padding-top: 2em;"> {{ day.day.avghumidity }}%</div>
+            <div style="font-size: medium;">Pluie<img src="../../assets/images/icons/pluie.png" style="padding-left: 4em; padding-right: 3em; padding-top: 2em;"> {{ day.day.daily_chance_of_rain }}%</div>
+            <div style="font-size: medium; padding-bottom: 2em;">precipitation<ion-icon name="cloud-upload" style="padding-left: 2em; padding-right: 2em; padding-top: 2em;"></ion-icon> {{ day.day.totalprecip_mm }} mm</div>
+          </div>
+        </div>
+
+        <ion-accordion-group>
+          <ion-accordion value="colors">
+            <ion-item slot="header">
+              <ion-label>Prévision horaire</ion-label>
+            </ion-item>
+
+            <ion-list slot="content">
+              <div *ngFor="let hour of day.hour">
+                <ion-item>
+                  <div class="hourly-content">
+                    <div class="hourly-time">
+                      {{ hour.time | date:'medium':'fr-FR' }} <img [src]="hour.condition.icon | safer: 'url'">
+                    </div>
+                    <div class="hourly-degree">
+                      {{ hour.temp_c }} ℃
+                    </div>
+                  </div>
+                </ion-item>
+              </div>
+            </ion-list>
+          </ion-accordion>
+        </ion-accordion-group>
+
+      </ion-card>
+
+    </div>
+
+  </div>
+
+  <!-- <div class="weatherapi2">
+    Powered by <a href="https://www.weatherapi.com/" title="Weather API">WeatherAPI.com</a>
+  </div> -->
+
+  <div *ngIf="!data && !error">
+    <ion-list>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated class="width60"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

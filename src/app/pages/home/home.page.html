@@ -1,0 +1,454 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="accueil"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Localités</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <swiper [autoplay]="true" [keyboard]="true" [pagination]="true" [scrollbar]="true" [zoom]="true">
+      <ng-template swiperSlide><img
+          src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2FCarte_Mali-cooperation-transfrontaliere-kenieba-et-saraya-explorent-la-gestion-harmonisee-des-ressources-naturelles.gif?alt=media&token=7e3ea7a9-8329-4db3-a57f-90e3ec270271"
+          alt="">
+      </ng-template>
+      <ng-template swiperSlide><img
+          src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2FI.%2BLE%2BCLIMAT%2BAU%2BMALI%2Bpluviom%C3%A9trie%2Bannuelle%2Bd%C3%A9croissante%2Bdu%2BSud%2Bau%2BNord.jpg?alt=media&token=ce2a66fd-fcdd-467f-9896-6a00b10c2559"
+          alt=""></ng-template>
+      <ng-template swiperSlide><img
+          src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2Fclimate-graph-200.png?alt=media&token=02bcb94e-1510-4fbb-9cf1-cbc7e3682e76"
+          alt=""></ng-template>
+      <ng-template swiperSlide><img
+          src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2Fimages.jfif?alt=media&token=3de10b0f-7ad6-4d2a-9807-ecd7598e5bb5"
+          alt=""></ng-template>
+      <ng-template swiperSlide><img
+          src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/assetes%2Ft%C3%A9l%C3%A9chargement.jfif?alt=media&token=29b2192f-ee7d-40d5-873f-27511b17cfcb"
+          alt=""></ng-template>
+    </swiper>
+  </ion-card>
+  <ion-item>
+    <ion-text style="text-justify: auto;">Le Mali, vaste pays continental au cœur de l’Afrique de l’Ouest, est situé entre les 10° et 25° de
+      latitude Nord et entre les 4° de longitu de Est et 12° de longitude Ouest.
+      Les températures sont élevées et la moyenne pluviométrique faible. On peut noter en
+      moyenne que : la température maximale sous abri varie entre 34 et 37°C et la minimale entre
+      21et 23°C ; l'humidité relative maximale oscille entre 31 et 75 % et la minimale entre 11 et 38
+      % ; l'évapotranspiration potentielle moyenne annuelle qui exprime la demande évaporative du
+      climat varie entre 1.534 et 2.003 mm contre en moyenne moins de 100 à plus de 1.000mm de
+      pluies; l'ensoleillement mensuel moyen varie de 284,7 à 322,0 heures.
+      Les 4 zones climatiques correspondent également à 4 zones écologiques principales avec un
+      potentiel agricole assez diversifié ; plus le Delta intérieur du Niger :</ion-text>
+
+  </ion-item>
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card style="border: solid 2x; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="bamako">
+            Bamako
+          </ion-button>
+          <ion-img src="../../../assets/images/Bamako_037.jpg"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="bamako" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    Bamako
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2FBamako_037.jpg?alt=media&token=5866c9d0-516a-4ada-b6f4-05cf97740c53"
+                  alt="">
+                <ion-item>
+                  <p>
+                    Bamako occupe la frange correspondant à la zone de la Savane soudanienne occidentale. Elle
+                    bénéficie
+                    de ce fait d'un climat tropical assez humide avec un total des précipitations annuelles de 878
+                    millimètres mais avec une saison sèche et une saison des pluies bien marquées. <br> Le mois le
+                    plus
+                    sec ne reçoit en effet
+                    pas la moindre goutte de pluie (précipitations égales à 0 mm en décembre) tandis que le mois
+                    le
+                    plus
+                    pluvieux est bien arrosé (précipitations égales à 234 mm en août). Les pluies régulières
+                    estivales
+                    permettent le
+                    développement d'une savane arborée ainsi que la culture de plantes telles que le sorgho, le
+                    maïs
+                    et
+                    le coton.
+                  </p>
+                </ion-item>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 2px; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="kayes">
+            Kayes
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2FH%C3%B4tel_de_Ville_de_Kayes.jpg?alt=media&token=2c6d2a1e-9704-4888-aeeb-7c3bc34f1b8a"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="kayes" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    Kayes
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-card>
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2FKayes.10.gif?alt=media&token=ce34652e-3357-42c6-b80e-dd56724304ce"
+                    alt="">
+                  <ion-item>
+                    <p>
+                      Kayes est surnommée « La cocotte-minute de l'Afrique » en raison de ses températures moyennes très
+                      élevées. En effet, elle est entourée de massifs montagneux très riches en fer qui contribuent à
+                      l'élévation de la température[Selon qui ?]. La température moyenne maximale du mois le plus
+                      torride
+                      de l'année (avril) y est de 44 °C2. La température moyenne annuelle est de 30 °C à Kayes. La durée
+                      moyenne annuelle d'ensoleillement y est de 3 049 h dans l'ensemble de la région3.
+                      Différents sites se trouvent dans les environs de Kayes
+                    </p>
+                  </ion-item>
+                </ion-card>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 2px; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="koulikoro">
+            Koulikoro
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2F800px-Niger_River.jpg?alt=media&token=9580132c-2543-40c3-84ad-ef8a17f88edc"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="koulikoro" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    Climat à Koulikoro
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-card>
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2F640px-ExploiteursDuSableRetournantaKoulikoro.jpg?alt=media&token=43147698-b759-4c99-99f8-41b6c844ba3b"
+                    alt="Koulikoro">
+                  <ion-item>
+                    <p>
+                      La ville est située sur la rive gauche du fleuve Niger, à 60 km au nord-est de Bamako, par
+                      la route
+                      nationale RN 27. Elle s'étend sur la plaine en bordure du fleuve surplombée par un plateau
+                      extension
+                      des monts Manding appelé le Niana Koulou.
+                    </p>
+                  </ion-item>
+                </ion-card>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 2px;margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="sikasso">
+            Sikasso
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2FLes-jardins-de-Sikasso-768x558.jpg?alt=media&token=dc31f9fe-cf0e-4284-832b-be13a073f30d"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="sikasso" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    Sikasso
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-card>
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2Fslide_4.jpg?alt=media&token=01d75994-d543-426f-8962-11bd00acb47d"
+                    alt="sikasso">
+                  <ion-item>
+                    <p>
+                      Bénéficiant d’un climat sous-tropical avec des précipitations très abondantes durant la
+                      saison des
+                      pluies (298,6 mm de hauteur de pluie pour le mois le plus arrosé), la production agricole
+                      est
+                      abondante. Les
+                      fruits et légumes sont disponibles toute l’année et l'autosuffisance alimentaire est assurée
+                      à la
+                      différence du reste
+                      du Mali.
+                    </p>
+                  </ion-item>
+                </ion-card>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 2px; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="segou">
+            Ségou
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2FFaidherbia_albida_branch.png?alt=media&token=df9e5cb6-849e-45bb-bfdb-4c682c4a3356"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; margin-top: 1px; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="segou" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    Ségou
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-card>
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2Fsecheresse-Kolodimini.jpg?alt=media&token=fe0ed295-00ad-4240-b32e-fd7219652293"
+                    alt="ségou">
+                  <ion-item>
+                    <p>
+                      Située au centre du Mali, la région de Ségou a une superficie de 64 947 km2 (environ 5 % du
+                      Mali).
+                      Elle est limitée au sud par la région de Sikasso, au sud-est par le Burkina Faso, à l'est
+                      par la
+                      région de Mopti au nord par la Mauritanie et la région de Tombouctou et à l'ouest par la
+                      région de
+                      Koulikoro.
+                      Avec les régions de Mopti et Koulikoro, elle forme ce qui est communément désigné comme le
+                      Centre du
+                      Mali.
+                      essentiellement située dans la zone sahélienne où elle bénéficie d’un climat semi-aride
+                      (moyenne des
+                      précipitations annuelles : 513 mm). La présence de plusieurs cours d’eau (elle est traversée
+                      par le
+                      fleuve Niger (sur 292 km) ainsi que la rivière Bani) permet les cultures irriguées.
+                      Les principales villes sont Ségou, San, Niono et les localités de Markala et Dioro,
+                    </p>
+                  </ion-item>
+                </ion-card>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 2px; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="mopti">
+            Mopti
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2Fmopti.jpg?alt=media&token=d72207c5-8f9d-47dd-842b-7b7dc27cadb5"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; margin-top: 2px; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="mopti" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    Mopti
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-item>
+                  Pluviométrie annuelle
+                  <p>Description</p>
+                </ion-item>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 2px; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="tombouctou">
+            Tombouctou
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2Ftombouctou.jpg?alt=media&token=2523943c-c6f8-4126-9378-38b7da4951b4"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; margin-top: 2px; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="tombouctou" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    Tombouctou
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-item>
+                  Pluviométrie annuelle
+                  <p>Description</p>
+                </ion-item>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 2px; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="gao">
+            Gao
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2Fgao.jpg?alt=media&token=6d2dd035-53c2-487a-99e1-26f438c18e8b"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; margin-top: 2px; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="gao" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    Gao
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-item>
+                  Pluviométrie annuelle
+                  <p>Description</p>
+                </ion-item>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 2px; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="kidal">
+            Kidal
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2Feau-potable-nord-desert-sahel-sahara-nord-mali.jpg?alt=media&token=0dbe54a9-376c-4d8a-b1fd-60fadd141482"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; margin-top: 2px; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="kidal" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    Kidal
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-item>
+                  Pluviométrie annuelle
+                  <p>Description</p>
+                </ion-item>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 1px; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="koutiala">
+            koutiala
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2FKoutia.jpg?alt=media&token=b040bf79-187f-4a04-ad20-ce43ed3f9bf2"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; margin-top: 2px; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="koutiala" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="secondary">
+                  <ion-title>
+                    Koutiala
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-item>
+                  Pluviométrie annuelle
+                  <p>Description</p>
+                </ion-item>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 2px; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="san">
+            San
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2Finondations-collecteurs-pour-draner-les-eaux-pluies.webp?alt=media&token=4d75fae2-427c-48ed-b428-5e7f7382baee"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="san" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    San
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-item>
+                  Pluviométrie annuelle
+                  <p>Description</p>
+                </ion-item>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card style="border: solid 2px; margin: -1px; width: 100%;">
+          <ion-button fill="clear" id="niono" style="left: auto;">
+            Niono
+          </ion-button>
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/changement-climatique-3e1a1.appspot.com/o/localites%2FNiono.jpg?alt=media&token=1c0b1f90-6fd7-4e90-b89c-fb49dc30b2a2"
+            style="width: 90%; display: block; justify-content: center; margin: auto; padding: auto; padding-bottom: 8px;">
+          </ion-img>
+          <ion-modal trigger="niono" [initialBreakpoint]="0.8" [breakpoints]="[0, 0.8, 1]">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar color="primary">
+                  <ion-title>
+                    Niono
+                  </ion-title>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content>
+                <ion-item>
+                  Pluviométrie annuelle
+                  <p>Description</p>
+                </ion-item>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

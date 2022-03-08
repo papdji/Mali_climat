@@ -1,0 +1,15 @@
+ion-content {
+    --background: linear-gradient(#1148e3 0%, #2959e2 12.25%, #3b68e5 16.25%, #4670e9 28.35%, #6e8ae6 38.23%, #7b9bfc 49.66%, #b1c4ff 75.69%, #c8d2ef 87.58%, #e1e1e1 100%);
+    ion-card{
+      ion-card-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+}
+
+
+.sign-up-link{
+  cursor: pointer;
+}
