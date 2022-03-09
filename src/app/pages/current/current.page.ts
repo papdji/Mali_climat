@@ -13,8 +13,9 @@ export class CurrentPage implements OnInit {
 
   data: CurrentWeather;
   error: string;
+  ville : string = "bamako";
   weatherForm = new FormGroup({
-    cityName: new FormControl(environment. DEFAULT_CITY, [Validators.required, Validators.minLength(2)])
+    // cityName: new FormControl(environment. DEFAULT_CITY, [Validators.required, Validators.minLength(2)])
   })
 
   constructor(private api: APIService) { }
@@ -24,16 +25,14 @@ export class CurrentPage implements OnInit {
   }
 
   onSubmit() {
-    if (this.weatherForm.valid) {
-      this.data = null;
-      this.getData();
-    } else {
-      this.error = 'Entrer la ville!';
-    }
+    this.data = null;
+    this.getData();
+    //this.ville;
   }
 
   getData(){
-    this.api.getCurrentWeather(this.weatherForm.value.cityName).subscribe((data) => { this.data = data; this.error = null; }, (err) => this.error = err.error.error.message);
+    this.api.getCurrentWeather(this.ville).subscribe((data) => { this.data = data; this.error = null; console.log(data);
+    }, (err) => this.error = err.error.error.message);
   }
 
 }

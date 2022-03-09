@@ -13,26 +13,24 @@ export class ForecastPage implements OnInit {
 
   data: ForecastWeather;
   error: string;
-  weatherForm = this.formBuilder.group({ cityName: ['', [Validators.required, Validators.minLength(2)]] });
+  ville : string = "bamako";
+  // weatherForm = this.formBuilder.group({ cityName: ['', [Validators.required, Validators.minLength(2)]] });
 
   constructor(private api: APIService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.weatherForm.patchValue({cityName: environment. DEFAULT_CITY});
+    // this.weatherForm.patchValue({cityName: environment. DEFAULT_CITY});
     this.getData();
   }
 
   onSubmit() {
-    if (this.weatherForm.valid) {
-      this.data = null;
-      this.getData();
-    } else {
-      this.error = 'Veuillez saisir une ville!';
-    }
+    this.data = null;
+    this.getData();
+    //this.ville;
   }
 
   getData(){
-    this.api.getForecastWeather(this.weatherForm.value.cityName).subscribe((data) => { this.data = data; this.error = null; }, (err) => this.error = err.error.error.message);
+    this.api.getForecastWeather(this.ville).subscribe((data) => { this.data = data; this.error = null; }, (err) => this.error = err.error.error.message);
   }
 
 }

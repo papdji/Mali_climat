@@ -23,7 +23,7 @@
 
     <ion-header collapse="condense" *ngIf="data">
         <ion-toolbar>
-            <ion-title size="medium">{{ data.location.country }} / {{ data.location.name }}</ion-title>
+            <ion-title style="font-size: 15px;">Mali  / {{ ville}}</ion-title>
         </ion-toolbar>
     </ion-header>
 
@@ -35,18 +35,27 @@
         </ion-item>
     </ion-list>
 
-    <form [formGroup]="weatherForm" (ngSubmit)="onSubmit()">
-        <ion-item>
-            <ion-label for="cityName" position="floating">Nom de la viile</ion-label>
-            <ion-input type="text" id="cityName" name="cityName" formControlName="cityName" clearInput="true"></ion-input>
-        </ion-item>
-        <ion-button type="submit" expand="block" fill="outline">
-            <ion-icon slot="icon-only" slot="end" name="search"></ion-icon>
-            Recherche
-            <ion-ripple-effect></ion-ripple-effect>
-        </ion-button>
-    </form>
 
+        <ion-item >
+          <ion-label>Ville</ion-label>
+          <ion-select interface="action-sheet" cancelText="Annuler" name="addresse" [(ngModel)]="ville" (ionChange)="onSubmit()">
+              <ion-select-option value="Bamako">Bamako</ion-select-option>
+              <ion-select-option  value="Kayes">Kayes</ion-select-option>
+              <ion-select-option value="Koulikoro">Koulikoro</ion-select-option>
+              <ion-select-option value="Sikasso">Sikasso</ion-select-option>
+              <ion-select-option value="Segou">Segou</ion-select-option>
+              <ion-select-option value="Mopti">Mopti</ion-select-option>
+              <ion-select-option value="Tombouctou">Tombouctou</ion-select-option>
+              <ion-select-option value="Goa">Goa</ion-select-option>
+              <ion-select-option value="Kidal">Kidal</ion-select-option>
+              <ion-select-option  value="San">San</ion-select-option>
+              <ion-select-option value="Niono">Niono</ion-select-option>
+              <ion-select-option value="Koutiala">Koutiala</ion-select-option>
+              <ion-select-option value="Nenaka">Nenaka</ion-select-option>
+              <ion-select-option value="Bougouni">Bougouni</ion-select-option>
+              <ion-select-option value="Taoudeni">Taoudeni</ion-select-option>
+          </ion-select>
+        </ion-item>
     <div *ngIf="data" class="data">
         <p style="text-align: center;">Dernière mis en jour: </p><p style="text-align: center;">{{ data.current.last_updated }}</p>
         <ion-item>

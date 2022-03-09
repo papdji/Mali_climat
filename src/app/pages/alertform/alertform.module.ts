@@ -14,7 +14,7 @@ import { AlertformPage } from './alertform.page';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    
+
     IonicModule,
     AlertformPageRoutingModule
   ],
