@@ -50,14 +50,29 @@
     </ion-item>
     <ion-item class='ion-margin' lines="none">
       <ion-label position="stacked">Image</ion-label>
-      <ion-input type="file" name="image" placeholder="Image du lieu" ngModel></ion-input>
+      <ion-input id="img" type="file" name="image" placeholder="Image du lieu" ngModel></ion-input>
     </ion-item>
-    <ion-item class='ion-margin' lines="none">
+    <!-- <ion-item class='ion-margin' lines="none">
       <ion-label position="stacked">Audio</ion-label>
       <ion-input type="file" name="audio" placeholder="Vocal" ngModel></ion-input>
-    </ion-item>
+    </ion-item> -->
     <ion-button class="ion-margin" color="primary" expand="block" type="submit">Envoyer</ion-button>
     <ion-button class="ion-margin" color="danger" expand="block" type="reset">Annuler</ion-button>
   </form>
-
+  <ion-list>
+    <ion-item *ngFor="let f of storedFileNames" (click)="playFile(f)">
+      {{f}}
+    </ion-item>
+  </ion-list>
+  <ion-row class="ion-align-items-center">
+    <ion-col size="8">
+      <span *ngIf="!recording"> appuyer</span>
+      <span *ngIf="recording"> {{durationDisplay}} </span>
+    </ion-col>
+    <ion-col size="2">
+      <ion-button fill="clear" #recordbtn>
+        <ion-icon name='mic-circle'></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>
